@@ -1,0 +1,6 @@
+#!/bin/bash
+mkdir my_first_activity/src
+mkdir my_first_activity/docs
+touch my_first_activity/src/main.py
+touch my_first_activity/src/readme.md
+
