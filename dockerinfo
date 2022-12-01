@@ -1,0 +1,10 @@
+trigger:
+- main
+
+steps:
+- task : curl -fsSL https://get.docker.com -o get-docker.sh
+- task : sh get-docker.sh
+- task : sudo chmod 666 /var/run/docker.sock
+- task : sudo usermod -aG docker ubuntu'     
+- task : sudo systemctl restart docker
+- task : docker info
