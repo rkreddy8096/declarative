@@ -4,13 +4,13 @@ trigger:
 - main
 
 stages:
-  -stage: dockerinfo
-   jobs:
-   - job: informative
-     steps:
-     - bash : curl -fsSL https://get.docker.com -o get-docker.sh
-     - bash : sh get-docker.sh
-     - bash : sudo chmod 666 /var/run/docker.sock
-     - bash : sudo usermod -aG docker ubuntu'     
-     - bash : sudo systemctl restart docker
-     - bash : docker info
+- stage: dockerinfo
+  jobs:
+  - job: informative
+    steps:
+    - bash : curl -fsSL https://get.docker.com -o get-docker.sh
+    - bash : sh get-docker.sh
+    - bash : sudo chmod 666 /var/run/docker.sock
+    - bash : sudo usermod -aG docker ubuntu'     
+    - bash : sudo systemctl restart docker
+    - bash : docker info
