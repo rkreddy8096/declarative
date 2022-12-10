@@ -1,9 +1,0 @@
-pipeline {
-    agent {
-        docker {
-            label 'jdk-11'
-            Run 'sudo usermod -aG docker ubuntu'
-            Run 'docker info'
-        }
-    }
-}
