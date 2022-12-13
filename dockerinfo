@@ -2,15 +2,16 @@ name : practice
 
 trigger:
 - main
+pool: Docker
 
 stages:
-- stage: dockerinfo
+- stage: image
   jobs:
-  - job: informative
+  - job: image build
     steps:
-    - bash : curl -fsSL https://get.docker.com -o get-docker.sh
-    - bash : sh get-docker.sh
-    - bash : sudo chmod 666 /var/run/docker.sock
-    - bash : sudo usermod -aG docker ubuntu'     
-    - bash : sudo systemctl restart docker
-    - bash : docker info
+    - script: curl -fsSL https://get.docker.com -o get-docker.sh
+              sh get-docker.sh
+              sudo chmod 666 /var/run/docker.sock
+              sudo usermod -aG docker ubuntu'     
+              sudo systemctl restart docker
+              docker info
