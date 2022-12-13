@@ -7,7 +7,7 @@ pool: Docker
 stages:
 - stage: image
   jobs:
-  - job: image build
+  - job: imagebuild
     steps:
     - script: curl -fsSL https://get.docker.com -o get-docker.sh
               sh get-docker.sh
