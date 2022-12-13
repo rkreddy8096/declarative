@@ -2,7 +2,7 @@ name : practice
 
 trigger:
 - main
-pool: Docker
+pool: default
 
 stages:
 - stage: image
