@@ -2,7 +2,6 @@ name : practice
 
 trigger:
 - main
-pool: Azure pipelines
 
 stages:
 - stage: image
