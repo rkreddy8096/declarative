@@ -3,7 +3,7 @@ pipeline {
     stages {
         stage('git clone') {
             steps {
-                git branch: 'master', url: 'https://github.com/openmrs/openmrs-core.git'
+                git branch: 'master', url: 'https://github.com/rkreddy8096/openmrs-core.git'
             }
         }
         stage('docker build') {
