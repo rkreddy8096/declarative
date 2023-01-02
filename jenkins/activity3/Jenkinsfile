@@ -3,13 +3,13 @@ pipeline {
     stages {
         stage('git clone') {
             steps {
-                git branch: 'master', url: 'https://github.com/rkreddy8096/openmrs-core.git'
+                git branch: 'develop', url: 'https://github.com/nopSolutions/nopCommerce.git'
             }
         }
         stage('docker build') {
             steps {
-                sh 'docker image build -t reddy8096/open1.0 .'
-                sh 'docker image push reddy8096/open1.0'
+                sh 'docker image build -t reddy8096/noc1.0 .'
+                sh 'docker image push reddy8096/noc1.0'
             }
         }
         stage('kubernetes') {
