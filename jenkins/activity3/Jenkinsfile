@@ -1,11 +1,6 @@
 pipeline {
     agent any
     stages {
-        stage('git clone') {
-            steps {
-                git branch: 'develop', url: 'https://github.com/nopSolutions/nopCommerce.git'
-            }
-        }
         stage('docker build') {
             steps {
                 sh 'docker image build -t reddy8096/noc1.0 .'
