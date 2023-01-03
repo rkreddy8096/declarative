@@ -24,8 +24,7 @@ pipeline {
         }
         stage('kuberdeploy') {
             steps {
-                sh 'aws eks --region $(terraform output -raw region) update-kubeconfig --name $(terraform output -raw cluster_name)'
-                dir ('/var/lib/jenkins/workspace/nopcommerce/jenkins/activity3') {
+                dir ('/var/lib/jenkins/workspace/nopcommerce/jenkins/') {
                 sh 'kubectl apply -f nop.yaml'
                 sh 'kubectl get svc'
                 }
