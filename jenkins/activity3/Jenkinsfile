@@ -1,6 +1,11 @@
 pipeline {
     agent any
     stages {
+        stage('git clone') {
+            steps {
+                git branch: 'dev', url: 'https://github.com/rkreddy8096/declarative.git'
+            }
+        }
         stage('docker build') {
             steps {
                 sh 'docker image build -t reddy8096/noc1.0 .'
